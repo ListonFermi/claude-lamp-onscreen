@@ -1,0 +1,15 @@
+{
+  "name": "claude-screen-border",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Screen border indicator for Claude hooks using Electron",
+  "main": "border-main.js",
+  "scripts": {
+    "start": "electron border-main.js",
+    "border:start": "node border-control.js start",
+    "border:stop": "node border-control.js stop"
+  },
+  "dependencies": {
+    "electron": "^37.2.0"
+  }
+}
