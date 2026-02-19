@@ -48,14 +48,14 @@ function start() {
     process.exit(1);
   }
 
+  const env = { ...process.env, ELECTRON_DISABLE_SECURITY_WARNINGS: 'true' };
+  delete env.ELECTRON_RUN_AS_NODE;
+
   const child = spawn(electronPath, ['border-main.js'], {
     detached: true,
     stdio: 'ignore',
-    cwd: process.cwd(),
-    env: {
-      ...process.env,
-      ELECTRON_DISABLE_SECURITY_WARNINGS: 'true',
-    },
+    cwd: __dirname,
+    env,
     windowsHide: true,
   });
 
